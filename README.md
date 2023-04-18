@@ -49,3 +49,7 @@ Once we've determined whether or not a tumor is present, we move onto a second m
 
 # WebApp
 
+We wrapped our models into a Flask API code to enable easy access and integration into whatever system a user might use. The user simply needs to upload their image file and click the ''**Predict**'' button to get their prediction.
+
+<img width="277" alt="image" src="https://user-images.githubusercontent.com/115593434/232893181-c76c6851-8487-4f8a-9d4f-dff7a8cd439f.png">
+
