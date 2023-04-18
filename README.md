@@ -15,12 +15,16 @@ The objective of this project is to develop a machine learning models that can d
 
 There will be two types of models made, 1 is trained on a dataset of MRI images that have been labeled with either the presence or absence of a tumor. The model will then be able to classify new MRI images as either having a tumor or not. 
 
-#About the Model
+# Datasets
 
-# Datasets link
+We've gathered data from Kaggle and housed them within an AWS S3 bucket for easy access:
 https://s3.console.aws.amazon.com/s3/buckets/brain-tumor-data?region=us-east-2&tab=objects
 
 https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection
 https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
+
+#About the Models
+
+
 
 
