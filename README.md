@@ -17,11 +17,14 @@ There will be two types of models made, 1 is trained on a dataset of MRI images 
 
 # Datasets
 
-We've gathered data from Kaggle and housed them within an AWS S3 bucket for easy access:
+We've gathered data from Kaggle and housed them within an AWS S3 bucket to feed our models for easy access:
 https://s3.console.aws.amazon.com/s3/buckets/brain-tumor-data?region=us-east-2&tab=objects
 
 https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection
 https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
+
+<img width="403" alt="image" src="https://user-images.githubusercontent.com/115593434/232891344-8cbf86ee-2020-4962-9120-e73061489c5a.png">
+
 
 #About the Models
 
@@ -39,4 +42,10 @@ The goal was not to maximize overall accuracy, **but to maximize recall**, essen
 
 
 ##Tumor Differentiating Model via CNN
+
+Once we've determined whether or not a tumor is present, we move onto a second model that will help healthcare providers quickly determine what type of tumor the patient has to speed up diagnosis and treatment plan implementation. 
+
+<img width="458" alt="image" src="https://user-images.githubusercontent.com/115593434/232890928-4e6f844a-8f20-4d31-9503-ce57393717bb.png">
+
+#WebApp
 
