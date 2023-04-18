@@ -11,7 +11,9 @@ Brain tumors are one of the most deadly and challenging diseases to diagnose and
 
 
 # Objective 
-The objective of this project is to develop a machine learning model that can detect brain tumors accurately using MRI images that can be uploaded onto a website. The model will be trained on a dataset of MRI images that have been labeled with either the presence or absence of a tumor. The model will then be able to classify new MRI images as either having a tumor or not. 
+The objective of this project is to develop a machine learning models that can detect brain tumors accurately using MRI images that can be uploaded onto a website. The models will be trained to specifically minimize the instances of false negatives, which is crucial in a medical context. One model will detect whether or not a tumor is present, the other -in the case of a positive result- will determine what type of tumor it is. 
+
+There will be two types of models made, 1 is trained on a dataset of MRI images that have been labeled with either the presence or absence of a tumor. The model will then be able to classify new MRI images as either having a tumor or not. 
 
 #About the Model
 
@@ -21,8 +23,4 @@ https://s3.console.aws.amazon.com/s3/buckets/brain-tumor-data?region=us-east-2&t
 https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection
 https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
 
-# Timeline 
-April 11th: Work-Day on Skeleton of Code 
-April 13th: Troubleshoot Day 
-April 17th: Presentation Work-Day 
-April 18th: Final Presentation! 
+
