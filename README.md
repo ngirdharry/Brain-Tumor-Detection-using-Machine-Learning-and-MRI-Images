@@ -25,6 +25,18 @@ https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
 
 #About the Models
 
+##Positive-Negative Classification via CNN
+
+We've chosen to use a Convolutional Neural Network to produce a model that will determine whether or not a tumor is present in a brain MRI image. The network was fed images from the S3 bucket and went through 25 epochs to avoid overfitting. 
+
+<img width="316" alt="image" src="https://user-images.githubusercontent.com/115593434/232886516-101b71ec-e0a5-49a1-9836-b0244cecc347.png">
+
+<img width="284" alt="image" src="https://user-images.githubusercontent.com/115593434/232886619-532e0359-1d7e-42cf-8682-43e5759b6ead.png">
+
+The goal was not to maximize overall accuracy, **but to maximize recall**, essentially minimizing the likelihood of false negatives. We managed to reach a recall of 97.12%. 
+
+<img width="386" alt="image" src="https://user-images.githubusercontent.com/115593434/232887114-26f76f15-25a2-4ee6-a038-0d02aabc928c.png">
 
 
+##Tumor Differentiating Model via CNN
 
