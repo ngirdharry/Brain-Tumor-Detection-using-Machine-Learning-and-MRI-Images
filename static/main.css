@@ -5,8 +5,14 @@
     border: 5px solid #3498db;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
     margin: 2em auto;
+    font-size: 18px;
+    font-weight: bold;
   }
   
+  body {
+    background-image: url('Background webapp.png');
+  }
+
   .img-preview > div {
     position: absolute;
     top: 0;

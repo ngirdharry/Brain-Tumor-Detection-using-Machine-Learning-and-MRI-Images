@@ -28,9 +28,9 @@ $(document).ready(function () {
     $('#btn-predict-Xception').click(function () {
         var form_data = new FormData($('#upload-file-Xception')[0]);
 
-        // Show loading animation
-        $(this).hide();
-        $('.loaderXception').show();
+        // Show progress bar and set it to 0%
+        $('.progress').show();
+        $('.progress-bar').css('width', '0%');
 
         // Make prediction by calling api /predictXception
         $.ajax({
@@ -41,14 +41,28 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             async: true,
+            xhr: function() {
+                // Use XMLHttpRequest to show progress bar
+                var xhr = new XMLHttpRequest();
+                xhr.upload.addEventListener('progress', function(evt) {
+                    if (evt.lengthComputable) {
+                        var percent = evt.loaded / evt.total * 100;
+                        $('.progress-bar').css('width', percent + '%');
+                    }
+                }, false);
+                return xhr;
+            },
             success: function (data) {
                 // Get and display the result
                 $('.loaderXception').hide();
                 $('#resultXception').fadeIn(600);
                 $('#resultXception').text(' Result:  ' + data);
-                console.log('Xception Success!');
+                console.log('Prediction Success!');
             },
+            complete: function() {
+                // Hide progress bar when complete
+                $('.progress').hide();
+            }
         });
     });
-
 });

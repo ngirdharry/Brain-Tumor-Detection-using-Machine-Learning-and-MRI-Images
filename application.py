@@ -24,7 +24,7 @@ output_layer=model.layers[-1]
 
 # Set the class names attribute of the output layer's configuration to later save the model with the class names
 output_layer_config = output_layer.get_config()
-output_layer_config['class_names']=["glioma_tumor","meningioma_tumor","no_tumor","pituitary_tumor"]
+output_layer_config['class_names']=["Glioma Tumor","Meningioma Tumor","No Tumor","Pituitary Tumor"]
 output_layer.config= output_layer_config
 
 # Save the model with the class names attribute
@@ -34,7 +34,7 @@ model.save('trained models\VGG16model94accuracy_with_classes.h5')
 model = load_model('trained models/VGG16model94accuracy_with_classes.h5')
 
 # assigning the class names to indexes
-class_indices = {0: 'meningioma_tumor', 1: 'glioma_tumor', 2: 'no_tumor', 3: 'pituitary_tumor'}
+class_indices = {0: 'Meningioma Tumor', 1: 'Glioma Tumor', 2: 'No Tumor', 3: 'Pituitary Tumor'}
 print('Model loaded.')
 print('Running on http://localhost:5000')
 # print(output_layer.config['class_names'])
@@ -99,7 +99,7 @@ def predict():
         confidence = preds[0][class_idx] * 100
 
         #Print the predicted class name and the confidence level onto the screen
-        result = f"Our model predicts that this image represents a {class_name} with a confidence level of {confidence:.2f}%"
+        result = f"Our model predicts that this image represents a {class_name}."
 
         return result
     return None
