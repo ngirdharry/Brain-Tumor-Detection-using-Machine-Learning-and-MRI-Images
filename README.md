@@ -16,6 +16,8 @@ The objective of this project is to develop a machine learning model that can de
 #About the Model
 
 # Datasets link
+https://s3.console.aws.amazon.com/s3/buckets/brain-tumor-data?region=us-east-2&tab=objects
+
 https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection
 https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
 
