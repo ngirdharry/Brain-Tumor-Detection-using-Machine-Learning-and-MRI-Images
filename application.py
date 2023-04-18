@@ -14,10 +14,10 @@ from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
 # Define a flask app
-app = Flask(__name__)
+application = Flask(__name__)
 
 #Loading original model without class names in the output layer
-model = load_model('VGG16model94accuracy.h5')
+model = load_model('trained models\VGG16model94accuracy.h5')
 
 # Assigning output layer to a variable
 output_layer=model.layers[-1]
@@ -28,10 +28,10 @@ output_layer_config['class_names']=["glioma_tumor","meningioma_tumor","no_tumor"
 output_layer.config= output_layer_config
 
 # Save the model with the class names attribute
-model.save('VGG16model94accuracy_with_classes.h5')
+model.save('trained models\VGG16model94accuracy_with_classes.h5')
 
 # Loading the model with the class names attribute
-model = load_model('VGG16model94accuracy_with_classes.h5')
+model = load_model('trained models/VGG16model94accuracy_with_classes.h5')
 
 # assigning the class names to indexes
 class_indices = {0: 'meningioma_tumor', 1: 'glioma_tumor', 2: 'no_tumor', 3: 'pituitary_tumor'}
@@ -52,12 +52,12 @@ def get_file_path_and_save(request):
 
 
 #Home route
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
 # Prediction route
-@app.route('/predict', methods=['GET', 'POST'])
+@application.route('/predict', methods=['GET', 'POST'])
 def predict():
     #IF statement to check if the request is a POST request
     if request.method == 'POST':
@@ -105,6 +105,6 @@ def predict():
     return None
 
 if __name__ == '__main__':
-    # Serve the app with gevent
-    http_server = WSGIServer(('', 5000), app)
+    # Serve the app with gevent to allow concurrent requests
+    http_server = WSGIServer(('', 5000), application)
     http_server.serve_forever()
